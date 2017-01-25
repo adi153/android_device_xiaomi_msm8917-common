@@ -1,3 +1,5 @@
+include $(call all-makefiles-under,$(call my-dir))
+
 include $(CLEAR_VARS)
 LOCAL_SHARED_LIBRARIES := libgui_vendor
 LOCAL_MODULE := libwui
