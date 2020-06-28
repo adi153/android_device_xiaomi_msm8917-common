@@ -7,3 +7,6 @@ service vendor.xiaomi_script /vendor/bin/init.xiaomi.sh
 
 on charger
     write /sys/class/leds/red/brightness 200
+
+on property:dev.bootcomplete=1
+    restart ril-daemon
