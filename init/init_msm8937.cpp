@@ -125,6 +125,13 @@ void security_patch_date_override(const char *sp_date)
     property_override("ro.vendor.build.security_patch", sp_date);
 }
 
+static void SetSafetyNetProps() {
+    property_override("ro.boot.flash.locked", "1");
+    property_override("ro.boot.verifiedbootstate", "green");
+    property_override("ro.boot.veritymode", "enforcing");
+    property_override("ro.boot.vbmeta.device_state", "locked");
+}
+
 void set_avoid_gfxaccel_config() {
     struct sysinfo sys;
     sysinfo(&sys);
@@ -143,6 +150,12 @@ void vendor_load_properties()
     build_description_override("redfin-user 11 RQ3A.210605.005 7349499 release-keys");
     build_fingerprint_override("google/redfin/redfin:11/RQ3A.210605.005/7349499:user/release-keys");
     security_patch_date_override("2021-06-05");
+
+    // Report a valid verified boot chain to make Google SafetyNet integrity
+    // checks pass. This needs to be done before parsing the kernel cmdline as
+    // these properties are read-only and will be set to invalid values with
+    // androidboot cmdline arguments.
+    SetSafetyNetProps();
 
     property_override("dalvik.vm.heapstartsize", heapstartsize);
     property_override("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
