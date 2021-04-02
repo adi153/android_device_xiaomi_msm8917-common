@@ -1,0 +1,4 @@
+service vendor.xiaomi_script /vendor/bin/init.xiaomi.sh
+    class main
+    user root
+    oneshot

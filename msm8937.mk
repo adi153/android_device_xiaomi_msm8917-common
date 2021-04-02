@@ -279,6 +279,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.target.rc \
+    init.xiaomi.rc \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 
@@ -286,6 +287,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.bt.sh \
     init.qcom.post_boot.sh \
+    init.xiaomi.sh \
     move_time_data.sh \
     move_wifi_data.sh
 
