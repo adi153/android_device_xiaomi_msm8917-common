@@ -1,3 +1,5 @@
+import /vendor/etc/init/hw/init.${ro.product.device}.rc
+
 service vendor.xiaomi_script /vendor/bin/init.xiaomi.sh
     class main
     user root
