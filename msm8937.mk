@@ -287,9 +287,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.bt.sh \
     init.qcom.post_boot.sh \
-    init.xiaomi.sh \
-    move_time_data.sh \
-    move_wifi_data.sh
+    init.xiaomi.sh
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
