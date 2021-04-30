@@ -206,3 +206,7 @@ persist.vendor.usb.config.extra=none
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
 wifi.interface=wlan0
+
+# GSI
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.miui.density_v2=267
