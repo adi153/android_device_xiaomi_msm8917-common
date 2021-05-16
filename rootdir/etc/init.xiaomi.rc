@@ -4,3 +4,6 @@ service vendor.xiaomi_script /vendor/bin/init.xiaomi.sh
     class main
     user root
     oneshot
+
+on charger
+    write /sys/class/leds/red/brightness 200

@@ -15,3 +15,4 @@ allow init firmware_file:filesystem getattr;
 
 # LED
 allow init sysfs_leds:lnk_file r_file_perms;
+allow init sysfs_leds:file rw_file_perms;
