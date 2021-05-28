@@ -51,7 +51,9 @@ static const std::string kGreenBlinkFile = JOIN_PATH(GREEN_LED_FILE_BASE, "blink
 static const std::string kBlueBlinkFile = JOIN_PATH(BLUE_LED_FILE_BASE, "blink");
 
 static const std::string kLCDFile = JOIN_PATH(LCD_BACKLIGHT_LED_FILE_BASE, "brightness");
+static const std::string kLCDMaxFile = JOIN_PATH(LCD_BACKLIGHT_LED_FILE_BASE, "max_brightness");
 static const std::string kLCDFile2 = "/sys/class/backlight/panel0-backlight/brightness";
+static const std::string kLCDMaxFile2 = "/sys/class/backlight/panel0-backlight/brightness";
 
 static const std::string kButtonFile = JOIN_PATH(BUTTON_BACKLIGHT_LED_FILE_BASE, "brightness");
 
@@ -107,13 +109,22 @@ ndk::ScopedAStatus Lights::setLightBacklight(const HwLightState& state) {
     bool wantsLowPersistence = state.brightnessMode == BrightnessMode::LOW_PERSISTENCE;
     uint32_t brightness = (wantsLowPersistence) ? DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS : 
                         RgbaToBrightness(state.color);
+    uint32_t max_brightness, new_brightness;
+    std::string kMaxBrightnessStr;
 
     if (mLowPersistenceEnabled != wantsLowPersistence) {
         WriteToFile(kPersistenceFile, wantsLowPersistence);
         mLowPersistenceEnabled = wantsLowPersistence;
     }
 
-    WriteToFile(mBacklightNode, brightness);
+    if (::android::base::ReadFileToString(kLCDMaxFile, &kMaxBrightnessStr, true) || ::android::base::ReadFileToString(kLCDMaxFile2, &kMaxBrightnessStr, true)) {
+        max_brightness = std::stoi(kMaxBrightnessStr);
+        new_brightness = max_brightness / 0xFF * brightness;
+    } else {
+        new_brightness = brightness;
+    }
+
+    WriteToFile(mBacklightNode, new_brightness);
     return ndk::ScopedAStatus::ok();
 }
 
