@@ -207,8 +207,8 @@ vendor/lib64/libcdsp_default_listener.so|94792d75a16534ae766aba9c0d4a4a62782eac6
 vendor/lib64/libfastrpc_utf_stub.so|d19ff5b0ef7506a5d28f5825547dcf235c2f8f96
 vendor/lib64/libsysmon_cdsp_skel.so|f3cb20891b795036134a659cd530287fe8c84369
 
-# Charger - from daisy
-vendor/bin/hvdcp_opti|7ee82dd264c7c349fb498111a61d5009ae9f0da2
+# Charger - from Xiaomi/olive/olive:10/QKQ1.191014.001/V12.0.2.0.QCNMIXM:user/release-keys
+vendor/bin/hvdcp_opti|a47c1adc0fa14f4b07330fd813777a6135e93a30
 
 # DPM - from daisy
 framework/tcmclient.jar|6ef9ca98f67c144fc8ae941bb3a47f99cbd93098
