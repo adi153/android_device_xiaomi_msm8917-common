@@ -15,21 +15,6 @@ vendor/lib64/libfastcvopt.so|f5e25aa055a57e23530b858bf7dd204a6009effc
 vendor/lib64/libmdsprpc.so|38de6a53d3c2ff60a253c7c6a0d3b46962e8e194
 vendor/lib64/libsdsprpc.so|1e89a33bae491abe4c81bb77c8fabf59bff4b853
 
-# ADSP modules - from daisy
-vendor/lib/rfsa/adsp/dirac_resource.dar|d9b3693eab8c520ef859236b8235752188b7cba0
-vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so|035272c1d77bcd04e3a838056d512964744c9322
-vendor/lib/rfsa/adsp/libadsp_hvx_skel.so|6a1d6ee55cc65d0f12f6a9bfd04823b46d2d6a24
-vendor/lib/rfsa/adsp/libadsp_hvx_stats.so|2f6abffe644ed918ff1a7e0e330f8e9c32add72c
-vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_BGGR.so|3f82d78a7c9e88c5fdc02dc0761349e4ab95abf8
-vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_RGGB.so|b21151ad414cd7310117fceb924a72fd20e97257
-vendor/lib/rfsa/adsp/libapps_mem_heap.so|5c82ad9cfe3f30105d899e2a4e90cc7566f81252
-vendor/lib/rfsa/adsp/libdirac-capiv2.so|e56031dfaee094d5267e3cc16625cfceaa07cc27
-vendor/lib/rfsa/adsp/libdspCV_skel.so|628985174b0088bed21c866d7984d23855e5e150
-vendor/lib/rfsa/adsp/libfastcvadsp.so|9818625bfa018f517e32a8f4a1e7fb4b255e5049
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so|1ff4a48009e88435d93fd2b9b0c5ea59cedbb4f7
-vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so|f4d8675a46c5e52add8f8e90e35b29cd33ac582b
-vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so|b9f68e320d24e9c51871a2056e1f47239bd1cb40
-
 # Audio - from daisy
 vendor/bin/audioflacapp|a8ae278497715aa53f6fb86d5f5af225da0fc5b0
 vendor/lib/libacdb-fts.so|9fb9fe8f1e22e38e41f1517b8f206a50bbb24419
@@ -705,19 +690,6 @@ vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|ba5ffc588422c1b0f3ac8135314db2c88d6
 vendor/lib64/vendor.qti.imsrtpservice@2.0.so|6ef5cd72d34c20e82cb0e58681a4aae9b0dac99a
 vendor/lib64/vendor.qti.imsrtpservice@2.1-service-Impl.so|9eb713ce4ffd38006bd0ca794a7e4152b33b3ded
 vendor/lib64/vendor.qti.imsrtpservice@2.1.so|6dbe703a5a8389c342008c950aaec7a3a260a055
-
-# Sensors - from daisy
-vendor/bin/sensors.qti|a2294878cef6ab4a6e51968e88799585c7d456fd
-vendor/lib/hw/activity_recognition.msm8937.so|f9247646a5e2b28473753da06f832ae5f702f7c4
-vendor/lib/libsensor1.so|48727a05c1b91051d5ec53860124f1f1c0d8ca53
-vendor/lib/libsensor_reg.so|8ae3b9d1a54feb9f0af55a8fff50410f53660318
-vendor/lib/libsensor_user_cal.so|df85342393b56994b4f4b4c33aad97928bc6f023
-vendor/lib/sensors.ssc.so|c4b5ee167e5b06fde7143007b87ea5dbe90b0565
-vendor/lib64/hw/activity_recognition.msm8937.so|5531da4cf2451f899602fb7e3f0e80775bb7e5ff
-vendor/lib64/libsensor1.so|48dedf69781fb146fc35e622f1c80a635530da22
-vendor/lib64/libsensor_reg.so|74659858f5abcfa0d8c826af2e2e46addc9f5f87
-vendor/lib64/libsensor_user_cal.so|92de798c64f9e23ca1069a5a4bec5895fafa9a22
-vendor/lib64/sensors.ssc.so|3d6eed945ab3ec2d91517cd6e9941df17a290445
 
 # Thermal - from daisy
 vendor/bin/thermal-engine|bbf772d4acf6c11413d2f728140aae63a49d3eae
