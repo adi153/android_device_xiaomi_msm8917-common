@@ -102,9 +102,36 @@ void check_device()
     }
 }
 
+void build_description_override(const char *build_desc)
+{
+    property_override("ro.build.description", build_desc);
+    property_override("ro.build.display.id", build_desc);
+}
+
+void build_fingerprint_override(const char *build_fp)
+{
+    property_override("ro.bootimage.build.fingerprint", build_fp);
+    property_override("ro.build.fingerprint", build_fp);
+    property_override("ro.odm.build.fingerprint", build_fp);
+    property_override("ro.product.build.fingerprint", build_fp);
+    property_override("ro.system.build.fingerprint", build_fp);
+    property_override("ro.system_ext.build.fingerprint", build_fp);
+    property_override("ro.vendor.build.fingerprint", build_fp);
+}
+
+void security_patch_date_override(const char *sp_date)
+{
+//  property_override("ro.build.version.security_patch", sp_date);
+    property_override("ro.vendor.build.security_patch", sp_date);
+}
+
 void vendor_load_properties()
 {
     check_device();
+
+    build_description_override("redfin-user S SPB1.210331.013 7333779 release-keys");
+    build_fingerprint_override("google/redfin/redfin:S/SPB1.210331.013/7333779:user/release-keys");
+    security_patch_date_override("2021-05-05");
 
     property_override("dalvik.vm.heapstartsize", heapstartsize);
     property_override("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
