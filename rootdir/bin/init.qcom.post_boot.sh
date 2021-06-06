@@ -27,6 +27,12 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+
+if [ "charger" == `getprop ro.bootmode` ]; then
+	echo 'workaround_not_resuming_in_offchg_mode' > /sys/power/wake_lock
+fi
+
+
 function 8953_sched_dcvs_eas()
 {
     #governor settings
