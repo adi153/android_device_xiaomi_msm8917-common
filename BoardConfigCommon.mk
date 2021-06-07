@@ -159,6 +159,10 @@ TARGET_USES_INTERACTION_BOOST := true
 BOARD_USES_QCOM_HARDWARE := true
 
 # SELinux
+ifeq ($(subst cherish_,,$(PRODUCT_NAME)),$(PRODUCT_DEVICE))
+-include device/cherish/sepolicy/qcom/sepolicy.mk
+endif
+
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
 
