@@ -721,9 +721,6 @@ vendor/lib/mediadrm/libwvdrmengine.so|3fac3fa919b3680fdbde4bb8880d3488ae801863|7
 vendor/lib64/libwvhidl.so|3288acf6c988c52a72029bef79da4d0fe8a72015|7161a1f0992da071e842655fcd42f20fa36909ac
 vendor/lib64/mediadrm/libwvdrmengine.so|77ecb3694aa9f60682c6de30322ced8f0da017ce|221b4daf14c4938a710dfe942d4c55af9906b907
 
-# Wi-Fi - from daisy
-vendor/bin/wcnss_service|f8ecd38a41b6b7f832380b489e0c9804c34174d8
-
 # Wi-Fi Display - from daisy
 bin/wfdservice|934817e5689fe6f8b54032902de58c203b8ec2e7
 etc/init/wfdservice.rc|311bfdd1675e56499662f39455536b75b78477bb
