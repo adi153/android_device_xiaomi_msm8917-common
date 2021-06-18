@@ -32,11 +32,17 @@
 
 #define BLINK           "blink"
 #define BRIGHTNESS      "brightness"
+#define MAX_BRIGHTNESS  "max_brightness"
 
 #define MAX_LED_BRIGHTNESS    255
-#define MAX_LCD_BRIGHTNESS    255
 
 namespace {
+static void get(std::string path, uint32_t *value) {
+    std::string tempstr;
+    android::base::ReadFileToString(path, &tempstr, true);
+    *value = std::stoi(tempstr);
+}
+
 static void set(std::string path, int value) {
     android::base::WriteStringToFile(std::to_string(value), path, true);
 }
@@ -73,7 +79,9 @@ static inline uint32_t getScaledBrightness(const LightState& state, uint32_t max
 }
 
 static void handleBacklight(const LightState& state) {
-    uint32_t brightness = getScaledBrightness(state, MAX_LCD_BRIGHTNESS);
+    uint32_t brightness, max_brightness = 0;
+    get(LCD_LED MAX_BRIGHTNESS, &max_brightness);
+    brightness = getScaledBrightness(state, max_brightness);
     set(LCD_LED BRIGHTNESS, brightness);
 }
 
