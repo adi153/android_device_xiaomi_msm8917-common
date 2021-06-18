@@ -20,7 +20,7 @@
 
 #include "Light.h"
 
-#include <fstream>
+#include <android-base/file.h>
 
 #define LEDS            "/sys/class/leds/"
 
@@ -37,22 +37,8 @@
 #define MAX_LCD_BRIGHTNESS    255
 
 namespace {
-/*
- * Write value to path and close file.
- */
-static void set(std::string path, std::string value) {
-    std::ofstream file(path);
-
-    if (!file.is_open()) {
-        ALOGW("failed to write %s to %s", value.c_str(), path.c_str());
-        return;
-    }
-
-    file << value;
-}
-
 static void set(std::string path, int value) {
-    set(path, std::to_string(value));
+    android::base::WriteStringToFile(std::to_string(value), path, true);
 }
 
 static uint32_t getBrightness(const LightState& state) {

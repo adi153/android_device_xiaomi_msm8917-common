@@ -21,6 +21,7 @@ cc_binary {
     vintf_fragments: ["android.hardware.light@2.0-service.xiaomi_msm8937.xml"],
     srcs: ["service.cpp", "Light.cpp"],
     shared_libs: [
+        "libbase",
         "libhardware",
         "libhidlbase",
         "liblog",
