@@ -129,9 +129,9 @@ void vendor_load_properties()
 {
     check_device();
 
-    build_description_override("redfin-user S SPB1.210331.013 7333779 release-keys");
-    build_fingerprint_override("google/redfin/redfin:S/SPB1.210331.013/7333779:user/release-keys");
-    security_patch_date_override("2021-05-05");
+    build_description_override("redfin-user 11 RQ3A.210605.005 7349499 release-keys");
+    build_fingerprint_override("google/redfin/redfin:11/RQ3A.210605.005/7349499:user/release-keys");
+    security_patch_date_override("2021-06-05");
 
     property_override("dalvik.vm.heapstartsize", heapstartsize);
     property_override("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
