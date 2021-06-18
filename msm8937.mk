@@ -216,7 +216,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.xiaomi_msm8937
+    android.hardware.light@2.0-service.xiaomi_msm8937
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
