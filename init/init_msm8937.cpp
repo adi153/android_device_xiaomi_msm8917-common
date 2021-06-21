@@ -128,8 +128,10 @@ void security_patch_date_override(const char *sp_date)
 static void SetSafetyNetProps() {
     property_override("ro.boot.flash.locked", "1");
     property_override("ro.boot.verifiedbootstate", "green");
+    property_override("vendor.boot.verifiedbootstate", "green");
     property_override("ro.boot.veritymode", "enforcing");
     property_override("ro.boot.vbmeta.device_state", "locked");
+    property_override("vendor.boot.vbmeta.device_state", "locked");
 }
 
 static void build_keys_override(const char *build_keys)
