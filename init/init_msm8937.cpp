@@ -146,16 +146,6 @@ static void build_keys_override(const char *build_keys)
     property_override("ro.vendor.build.tags", build_keys);
 }
 
-void set_avoid_gfxaccel_config() {
-    struct sysinfo sys;
-    sysinfo(&sys);
-
-    if (sys.totalram <= 2048ull * 1024 * 1024) {
-        // Reduce memory footprint
-        property_override("ro.config.avoid_gfx_accel", "true");
-    }
-}
-
 static void set_model_name(const char *model_name)
 {
     property_override("ro.product.model", model_name);
@@ -194,7 +184,6 @@ void vendor_load_properties()
     load_mi8937_model_name();
 
     check_device();
-    set_avoid_gfxaccel_config();
 
     build_description_override("redfin-user 11 RQ3A.210605.005 7349499 release-keys");
     build_fingerprint_override("google/redfin/redfin:11/RQ3A.210605.005/7349499:user/release-keys");
